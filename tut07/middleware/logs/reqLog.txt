@@ -1,0 +1,3 @@
+
+20231010	13:50:19	a3b8fe47-fefd-46ec-aa4f-ae174b3a4bd6	GET	undefined	/
+20231010	13:50:19	02b3045f-5406-4c77-8a66-10c3542d84dd	GET	undefined	/css/style.css

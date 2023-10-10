@@ -1,7 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const { logger } = require('./middleware/logEvents');
 const PORT = process.env.PORT || 3500;
+
+//custom middleware logger
+app.use(logger);
+
 
 // built in middleware to handle urlencoded data
 // in other words \, form data:
@@ -12,6 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); 
 
 //serve static files
+// basically what serving static files from public folder means is we can directly call those
+// files without requiring to mention the 
+// specific directory they are located
+// it is as if they are in the public domain 
+// accessible from anywhere 
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('^/$|/index(.html)?', (req, res) => {
